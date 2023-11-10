@@ -1,5 +1,6 @@
 package com.server.webbansach_backend;
 
+import com.server.webbansach_backend.entity.TheLoai;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,7 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class WebbansachBackendApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void contextLoads(){
+		TheLoai theLoai =new TheLoai();
+		theLoai.setMaTheLoai(1);
 	}
 
 }
