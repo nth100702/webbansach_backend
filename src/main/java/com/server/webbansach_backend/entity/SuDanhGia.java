@@ -14,7 +14,7 @@ public class SuDanhGia {
     private long maDanhGia;
 
     @Column(name="diem_xep_hang")
-    private float rating;
+    private float diemXepHang;
 
     @Column(name="nhan_xet")
     private String nhanXet;

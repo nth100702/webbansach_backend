@@ -1,12 +1,11 @@
 package com.server.webbansach_backend.dao;
 
 
-import com.server.webbansach_backend.entity.DonHang;
 import com.server.webbansach_backend.entity.SuDanhGia;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
+@RepositoryRestResource(path="su-danh-gia")
 public interface SuDanhGiaRepository extends JpaRepository<SuDanhGia,Integer> {
     
 }

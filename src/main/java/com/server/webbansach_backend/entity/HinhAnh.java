@@ -20,11 +20,11 @@ public class HinhAnh {
     private boolean laIcon;
 
     @Column(name="duong_dan")
-    private String url;
+    private String duongDan;
 
-    @Column(name="du_lieu_anh")
+    @Column(name="du_lieu_anh", columnDefinition = "LONGTEXT")
     @Lob
-    private String data;
+    private String duLieuAnh;
 
     @ManyToOne(cascade={
             CascadeType.PERSIST, CascadeType.MERGE,
