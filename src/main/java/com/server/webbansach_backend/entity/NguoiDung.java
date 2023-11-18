@@ -2,6 +2,7 @@ package com.server.webbansach_backend.entity;
 
 import lombok.Data;
 
+import javax.management.relation.RoleList;
 import javax.persistence.*;
 import java.util.List;
 
@@ -75,4 +76,156 @@ public class NguoiDung {
             CascadeType.DETACH, CascadeType.REFRESH
     })
     private List<DonHang> danhSachDonHang;
+
+    public int getMaNguoiDung() {
+        return maNguoiDung;
+    }
+
+    public void setMaNguoiDung(int maNguoiDung) {
+        this.maNguoiDung = maNguoiDung;
+    }
+
+    public String getHoDem() {
+        return hoDem;
+    }
+
+    public void setHoDem(String hoDem) {
+        this.hoDem = hoDem;
+    }
+
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+
+    public String getTenDangNhap() {
+        return tenDangNhap;
+    }
+
+    public void setTenDangNhap(String tenDangNhap) {
+        this.tenDangNhap = tenDangNhap;
+    }
+
+    public String getMatKhau() {
+        return matKhau;
+    }
+
+    public void setMatKhau(String matKhau) {
+        this.matKhau = matKhau;
+    }
+
+    public char getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(char gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSoDienThoai() {
+        return soDienThoai;
+    }
+
+    public void setSoDienThoai(String soDienThoai) {
+        this.soDienThoai = soDienThoai;
+    }
+
+    public String getDiaChiMuaHang() {
+        return diaChiMuaHang;
+    }
+
+    public void setDiaChiMuaHang(String diaChiMuaHang) {
+        this.diaChiMuaHang = diaChiMuaHang;
+    }
+
+    public String getDiaChiGiaoHang() {
+        return diaChiGiaoHang;
+    }
+
+    public void setDiaChiGiaoHang(String diaChiGiaoHang) {
+        this.diaChiGiaoHang = diaChiGiaoHang;
+    }
+
+    public boolean isDaKichHoat() {
+        return daKichHoat;
+    }
+
+    public void setDaKichHoat(boolean daKichHoat) {
+        this.daKichHoat = daKichHoat;
+    }
+
+    public String getMaKichHoat() {
+        return maKichHoat;
+    }
+
+    public void setMaKichHoat(String maKichHoat) {
+        this.maKichHoat = maKichHoat;
+    }
+
+    public List<SuDanhGia> getDanhSachDanhGia() {
+        return danhSachDanhGia;
+    }
+
+    public void setDanhSachDanhGia(List<SuDanhGia> danhSachDanhGia) {
+        this.danhSachDanhGia = danhSachDanhGia;
+    }
+
+    public List<SachYeuThich> getDanhSachYeuThich() {
+        return danhSachYeuThich;
+    }
+
+    public void setDanhSachYeuThich(List<SachYeuThich> danhSachYeuThich) {
+        this.danhSachYeuThich = danhSachYeuThich;
+    }
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        System.out.println("Quyền :" + roleList);
+        this.roleList = roleList;
+    }
+
+    public List<DonHang> getDanhSachDonHang() {
+        return danhSachDonHang;
+    }
+
+    public void setDanhSachDonHang(List<DonHang> danhSachDonHang) {
+        this.danhSachDonHang = danhSachDonHang;
+    }
+
+    @Override
+    public String toString() {
+        return "NguoiDung{" +
+                "maNguoiDung=" + maNguoiDung +
+                ", hoDem='" + hoDem + '\'' +
+                ", ten='" + ten + '\'' +
+                ", tenDangNhap='" + tenDangNhap + '\'' +
+                ", matKhau='" + matKhau + '\'' +
+                ", gioiTinh=" + gioiTinh +
+                ", email='" + email + '\'' +
+                ", soDienThoai='" + soDienThoai + '\'' +
+                ", diaChiMuaHang='" + diaChiMuaHang + '\'' +
+                ", diaChiGiaoHang='" + diaChiGiaoHang + '\'' +
+//                ", daKichHoat=" + daKichHoat +
+//                ", maKichHoat='" + maKichHoat + '\'' +
+                ", danhSachSuDanhGia=" + danhSachDanhGia +
+                ", danhSachSachYeuThich=" + danhSachYeuThich +
+                ", danhSachQuyen=" + roleList +
+                ", danhSachDonhang=" + danhSachDonHang +
+                '}';
+    }
 }
+

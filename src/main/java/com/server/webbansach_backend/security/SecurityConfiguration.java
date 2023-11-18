@@ -36,7 +36,7 @@ public class SecurityConfiguration {
                 config -> config
                         .antMatchers(HttpMethod.GET, Endpoints.PUBLIC_GET_ENDPOINS).permitAll()
                         .antMatchers(HttpMethod.POST, Endpoints.PUBLIC_POST_ENDPOINS).permitAll()
-                        .antMatchers(HttpMethod.GET, Endpoints.ADMIN_GET_ENDPOINS).hasAuthority("ADMIN")
+                        .antMatchers(HttpMethod.GET,Endpoints.ADMIN_GET_ENDPOINS).hasAuthority("ADMIN")
         );
         http.cors(cors -> {
             cors.configurationSource(request -> {

@@ -20,4 +20,10 @@ public class TaiKhoanController {
         ResponseEntity<?> response = taiKhoanService.dangKyNguoiDung(nguoiDung);
         return response;
     }
+
+    @GetMapping("/kich-hoat")
+    public ResponseEntity<?> kichHoatTaiKhoan(@RequestParam String email, @RequestParam String maKichHoat){
+        ResponseEntity<?> response = taiKhoanService.kichHoatTaiKHoan(email,maKichHoat);
+        return response;
+    }
 }
