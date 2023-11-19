@@ -27,7 +27,6 @@ public class TaiKhoanService {
             return  ResponseEntity.badRequest().body(new ThongBao("Email đã tồn tại"));
 
         }
-        // Mã hóa mật khẩu
         String encryptPassword = passwordEncoder.encode(nguoiDung.getMatKhau());
         nguoiDung.setMatKhau(encryptPassword);
 

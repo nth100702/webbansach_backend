@@ -219,8 +219,8 @@ public class NguoiDung {
                 ", soDienThoai='" + soDienThoai + '\'' +
                 ", diaChiMuaHang='" + diaChiMuaHang + '\'' +
                 ", diaChiGiaoHang='" + diaChiGiaoHang + '\'' +
-//                ", daKichHoat=" + daKichHoat +
-//                ", maKichHoat='" + maKichHoat + '\'' +
+                ", daKichHoat=" + daKichHoat +
+                ", maKichHoat='" + maKichHoat + '\'' +
                 ", danhSachSuDanhGia=" + danhSachDanhGia +
                 ", danhSachSachYeuThich=" + danhSachYeuThich +
                 ", danhSachQuyen=" + roleList +

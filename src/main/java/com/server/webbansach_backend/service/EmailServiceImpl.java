@@ -31,7 +31,6 @@ public class EmailServiceImpl implements EmailService {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-        // thực hiện hành động gửi email
         emailSender.send(message);
     }
 
