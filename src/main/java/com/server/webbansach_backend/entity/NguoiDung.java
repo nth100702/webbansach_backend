@@ -43,7 +43,7 @@ public class NguoiDung {
     private String diaChiGiaoHang;
 
     @Column(name="da_kich_hoat")
-    private boolean daKichHoat;
+    private Boolean daKichHoat;
 
     @Column(name="ma_kich_hoat")
     private String maKichHoat;
@@ -76,6 +76,15 @@ public class NguoiDung {
             CascadeType.DETACH, CascadeType.REFRESH
     })
     private List<DonHang> danhSachDonHang;
+
+    @OneToMany(mappedBy = "nguoiDung", fetch=FetchType.LAZY, cascade={
+            CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH
+    })
+    private List<CartItem> danhSachGioHang;
+
+    @ManyToMany
+    private List<Sach> danhSachSach;
 
     public int getMaNguoiDung() {
         return maNguoiDung;
@@ -157,7 +166,7 @@ public class NguoiDung {
         this.diaChiGiaoHang = diaChiGiaoHang;
     }
 
-    public boolean isDaKichHoat() {
+    public Boolean isDaKichHoat() {
         return daKichHoat;
     }
 

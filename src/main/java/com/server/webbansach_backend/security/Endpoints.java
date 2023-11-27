@@ -10,11 +10,13 @@ public class Endpoints {
             "/nguoi-dung/search/existsByTenDangNhap",
             "/nguoi-dung/search/existsByEmail",
             "/tai-khoan/kich-hoat",
+            "/gio-hang",
     };
 
     public static final String[] PUBLIC_POST_ENDPOINS = {
             "/tai-khoan/dang-ky",
-            "tai-khaon/dang-nhap",
+            "/tai-khoan/dang-nhap",
+            "/gio-hang/them",
     };
 
     public static final String[] ADMIN_GET_ENDPOINS = {
