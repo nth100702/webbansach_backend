@@ -24,18 +24,15 @@ public class CartItem {
     @Column(name="so_luong")
     private int soLuong;
 
-    @ManyToOne(cascade={
-            CascadeType.PERSIST, CascadeType.MERGE,
-            CascadeType.DETACH, CascadeType.REFRESH
-    })
-    @JoinColumn(name="ma_nguoi_dung")
+    @ManyToOne(targetEntity = NguoiDung.class, fetch = FetchType.EAGER)
+    @JoinColumn(name="ma_nguoi_dung",nullable = false)
     private NguoiDung nguoiDung;
 
     @ManyToOne(cascade={
             CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH
     })
-    @JoinColumn(name="ma_sach")
+    @JoinColumn(name="ma_sach",nullable = false)
     private Sach sach;
 
     public CartItem(int soLuong, NguoiDung nguoiDung, Sach sach) {
@@ -51,7 +48,7 @@ public class CartItem {
                 ", tongTien=" + tongTien +
                 ", soLuong=" + soLuong +
                 ", nguoiDung=" + nguoiDung +
-                ", sach=" + sach +
+                ", sach=" + sach.getTenSach() +
                 '}';
     }
 }

@@ -10,7 +10,8 @@ public class Endpoints {
             "/nguoi-dung/search/existsByTenDangNhap",
             "/nguoi-dung/search/existsByEmail",
             "/tai-khoan/kich-hoat",
-            "/gio-hang",
+//            "/gio-hang",
+//            "/gio-hang/"
     };
 
     public static final String[] PUBLIC_POST_ENDPOINS = {

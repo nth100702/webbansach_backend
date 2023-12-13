@@ -6,7 +6,7 @@ import com.server.webbansach_backend.security.JwtResponse;
 import com.server.webbansach_backend.security.LoginRequest;
 import com.server.webbansach_backend.service.JwtService;
 import com.server.webbansach_backend.service.TaiKhoanService;
-import com.server.webbansach_backend.service.UserService;
+import com.server.webbansach_backend.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,7 +27,7 @@ public class TaiKhoanController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private UserService userService;
+    private UserDetailService userDetailService;
 
     @Autowired
     private JwtService jwtService;

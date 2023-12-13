@@ -1,7 +1,7 @@
 package com.server.webbansach_backend.security;
 
 import com.server.webbansach_backend.filter.JwtFilter;
-import com.server.webbansach_backend.service.UserService;
+import com.server.webbansach_backend.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,9 +31,9 @@ public class SecurityConfiguration {
 
     @Bean
     @Autowired
-    public DaoAuthenticationProvider authenticationProvider(UserService userService) {
+    public DaoAuthenticationProvider authenticationProvider(UserDetailService userDetailService) {
         DaoAuthenticationProvider dap=new DaoAuthenticationProvider();
-        dap.setUserDetailsService(userService);
+        dap.setUserDetailsService(userDetailService);
         dap.setPasswordEncoder(passwordEncoder());
         return dap;
     }

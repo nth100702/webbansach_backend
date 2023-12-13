@@ -23,11 +23,11 @@ public class JwtService {
     public static final String SERECT ="5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
 
     @Autowired
-    private UserService userService;
+    private UserDetailService userDetailService;
 
     public String generateToken(String tenDangNhap){
         Map<String, Object> claims=new HashMap<>();
-        NguoiDung nguoiDung = userService.findByUsername(tenDangNhap);
+        NguoiDung nguoiDung = userDetailService.findByUsername(tenDangNhap);
 
         boolean isAdmin = false;
         boolean isStaff = false;

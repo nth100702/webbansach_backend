@@ -13,5 +13,11 @@ import java.util.Optional;
 public interface CartRepository extends JpaRepository<CartItem,Integer> {
     List<CartItem> findAllByNguoiDung(NguoiDung nguoiDung);
 
-    Optional<CartItem> findByNguoiDung_MaNguoiDung(@Param("maNguoiDung") int maNguoiDung);
+    List<CartItem> findByNguoiDung_MaNguoiDung(@Param("maNguoiDung") int maNguoiDung);
+
+    List<CartItem> findByNguoiDung_TenDangNhap(@Param("tenDangNhap") String tenDangNhap);
+
+    void deleteByNguoiDung(NguoiDung nguoiDung);
+
+    public boolean existsByMaGioHang(Integer maGioHang);
 }

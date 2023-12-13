@@ -9,20 +9,19 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 @Data
 public class UserPrincipal implements UserDetails {
-    private final int id;
-    private final String passwordd;
-    private final String email;
+    private final Integer maNguoiDung;
+    private final String matKhau;
+    private final String tenDangNhap;
     private final boolean active;
     private final Collection<? extends GrantedAuthority> authorities;
 
-    public static UserPrincipal create(NguoiDung nguoiDung){
-        String userRole =nguoiDung.getRoleList().iterator().next().toString();
-        Set<SimpleGrantedAuthority> authorities= Collections.singleton(new SimpleGrantedAuthority(userRole));
-        return new UserPrincipal(nguoiDung.getMaNguoiDung(),nguoiDung.getMatKhau(),nguoiDung.getEmail(),nguoiDung.isDaKichHoat(),authorities);
+    public static UserPrincipal create(NguoiDung nguoiDung) {
+        String userRole = nguoiDung.getRoleList().iterator().next().toString();
+        List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority(userRole));
+        return new UserPrincipal(nguoiDung.getMaNguoiDung(), nguoiDung.getMatKhau(), nguoiDung.getTenDangNhap(), nguoiDung.isDaKichHoat(), authorities);
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -36,7 +35,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return tenDangNhap ;
     }
 
     @Override

@@ -11,6 +11,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(path="sach")
 public interface SachRepository extends JpaRepository<Sach,Integer> {
+    Sach findByMaSach(Integer maSach);
     Page<Sach> findByTenSachContaining(@Param("tenSach") String tenSach, Pageable pageable);
     Page<Sach> findByDanhSachTheLoai_MaTheLoai(@Param("maTheLoai") int maTheLoai,Pageable pageable);
     Page<Sach> findByTenSachContainingAndDanhSachTheLoai_MaTheLoai(@Param("tenSach") String tenSach,@Param("maTheLoai") int maTheLoai,Pageable pageable);

@@ -1,5 +1,6 @@
 package com.server.webbansach_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -38,6 +39,7 @@ public class Sach {
     @Column(name="trung_binh_xep_hang")
     private double trungBinhXepHang;
 
+
     @ManyToMany(fetch=FetchType.LAZY, cascade={
             CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH
@@ -68,4 +70,5 @@ public class Sach {
 
     @OneToMany(mappedBy = "sach", fetch=FetchType.LAZY, cascade=CascadeType.ALL)
     List<SachYeuThich> danhSachYeuThich;
+
 }

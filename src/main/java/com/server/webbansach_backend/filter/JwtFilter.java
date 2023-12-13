@@ -1,7 +1,7 @@
 package com.server.webbansach_backend.filter;
 
 import com.server.webbansach_backend.service.JwtService;
-import com.server.webbansach_backend.service.UserService;
+import com.server.webbansach_backend.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,7 +23,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private JwtService jwtService;
 
     @Autowired
-    private UserService userDetailService;
+    private UserDetailService userDetailService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
